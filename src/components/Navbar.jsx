@@ -1,6 +1,9 @@
 import { useState } from "react";
 import Buttons from "./Buttons";
 import { Link } from "react-router-dom";
+import searchIcon from "../assets/search.png";
+import gmailIcon from "../assets/gmail.png";
+import userIcon from "../assets/user.png";
 
 const Navbar = () => {
   const [hamburger, setHamburger] = useState(false);
@@ -17,23 +20,21 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex gap-2 flex-1 max-w-md ">
-          <div className="flex items-center w-60 bg-gray-50 rounded-full px-4 py-2 border border-gray-200 focus-within:border-gray-300 focus-within:bg-white">
+          <form action="/search-page">
             <input
               type="text"
+              name="q"
               placeholder="Search Medium"
+              autoComplete="off"
               className="flex-1 bg-transparent outline-none text-sm text-gray-700 placeholder-gray-500"
             />
             <button
               type="submit"
               className="ml-2 p-1 hover:bg-gray-100 rounded-full transition-colors"
             >
-              <img
-                src="src/assets/search.png"
-                alt="search"
-                className="w-4 h-4"
-              />
+              <img src={searchIcon} alt="search" className="w-4 h-4" />
             </button>
-          </div>
+          </form>
         </div>
 
         <div className="flex items-center gap-3">
@@ -42,23 +43,19 @@ const Navbar = () => {
               onClick={() => setInput(!input)}
               className="p-2 hover:bg-gray-100 rounded-full transition-colors"
             >
-              <img
-                src="src/assets/search.png"
-                alt="search"
-                className="w-5 h-5"
-              />
+              <img src={searchIcon} alt="search" className="w-4 h-4" />
             </button>
             <button
               type="button"
               className="p-2 hover:bg-gray-100 rounded-full transition-colors"
             >
-              <img src="src/assets/gmail.png" alt="email" className="w-5 h-5" />
+              <img src={gmailIcon} alt="email" className="w-5 h-5" />
             </button>
           </div>
 
           <div className="hidden md:block">
             <Buttons className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-              <img src="src/assets/user.png" alt="user" className="w-6 h-6" />
+              <img src={userIcon} alt="user" className="w-6 h-6" />
             </Buttons>
           </div>
         </div>
