@@ -1,16 +1,33 @@
-# React + Vite
+# 📖 Medium Clone Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyek ini adalah clone sederhana dari **Medium** menggunakan **React + Vite + Tailwind CSS**.  
+Aplikasi ini menampilkan artikel, fitur pencarian, detail artikel, serta halaman error custom.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Fitur
 
-## React Compiler
+- 🔍 **Search**: Cari artikel berdasarkan judul.
+- 📑 **Article Detail**: Lihat detail artikel berdasarkan `author` dan `slug`.
+- 🏠 **Home Page**: Menampilkan daftar artikel dari `articles.json`.
+- 🎨 **UI Components**:
+  - `Navbar` dengan menu hamburger dan search bar responsif.
+  - `Card` untuk menampilkan artikel dalam bentuk grid.
+  - `Fazztrack` sebagai profil singkat.
+  - `Error Page` (404) dengan animasi.
+- ⚡ **Responsive**: Menggunakan Tailwind untuk desain mobile-friendly.
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Teknologi
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
+
+---
+
+[!ss](./src/assets/articledetail.png)
+[!ss](./src/assets/mediumHome.png)
+[!ss](./src/assets/mediumgrid.png)
