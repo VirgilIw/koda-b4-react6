@@ -1,18 +1,19 @@
 // pages/SearchPage.jsx
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import Card from "../components/Card";
 
 const SearchPage = () => {
   const [searchParams] = useSearchParams();
   const [hasil, setHasil] = useState([]);
+  const navigate = useNavigate();
 
   const fetchUrl = async () => {
     const query = searchParams.get("q");
     if (query) {
       const res = await fetch("/data/articles.json");
       const data = await res.json();
-      const arr = data.articles || data; // support both { articles: [...] } or [...]
+      const arr = data.articles || data;
       const found = arr.filter((o) =>
         o.title?.toLowerCase().includes(query.toLowerCase())
       );
@@ -37,9 +38,7 @@ const SearchPage = () => {
           {hasil.map((item) => (
             <Card
               key={item.id}
-              onClick={() =>
-                window.location.assign(`/article/${item.author}/${item.slug}`)
-              }
+              onClick={() => navigate(`/article/${item.author}/${item.slug}`)}
               title={item.title}
               description={item.description || item.excerpt}
               image={item.thumbnail}
